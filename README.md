@@ -31,13 +31,16 @@ $ flask run
 
 ### Home page
 
+
 ![Alt text](static/img/blog_home.png?raw=true)
 
 ### Post page
 
+
 ![Alt text](static/img/blog_post.png?raw=true)
 
-### Comments 
+### Comments
+
 
 **Comments are powered by Disqus**
 
@@ -48,6 +51,7 @@ $ flask run
 ![Alt text](static/img/blog_math.png?raw=true)
 
 ### Archive
+
 
 ![Alt text](static/img/blog_archive.png?raw=true)
 
