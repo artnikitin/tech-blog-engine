@@ -29,47 +29,45 @@ $ flask run
 
 ## Usage
 
-Home page:
+### Home page
 
 ![Alt text](static/img/blog_home.png?raw=true)
 
-Post page:
+### Post page
 
 ![Alt text](static/img/blog_post.png?raw=true)
 
-Comments are powered by Disqus
+### Comments 
+
+**Comments are powered by Disqus**
 
 ![Alt text](static/img/blog_comments.png?raw=true)
 
-and math notation is running on [MathJax](https://www.mathjax.org) – a fancy javascript engine for enterpreting LaTeX in browsers
+**and math notation is running on [MathJax](https://www.mathjax.org) – a fancy javascript engine for enterpreting LaTeX in browsers**
 
 ![Alt text](static/img/blog_math.png?raw=true)
 
-Archive:
+### Archive
 
 ![Alt text](static/img/blog_archive.png?raw=true)
 
-You can access admin dashboard via /admin url. Login:
+**You can access admin dashboard via /admin url. Login:**
 
 ![Alt text](static/img/blog_login.png?raw=true)
 
-Dashboard:
+**Dashboard:**
 
 ![Alt text](static/img/blog_admin.png?raw=true)
 
-During admin session you can modify old posts
+**During admin session you can modify old posts**
 
 ![Alt text](static/img/blog_modifypost.png?raw=true)
 
-or create new ones
+**or create new ones**
 
 ![Alt text](static/img/blog_newpost.png?raw=true)
 
-The post editing process is powered by [TinyMCE](https://www.tiny.cloud) WYSIWYG html editor. Post url's are created dynamically via own slugify() function and regex.
-
-## Localisation
-
-The website is in English only. No localisation is planned.
+**The post editing process is powered by [TinyMCE](https://www.tiny.cloud) WYSIWYG html editor. Post url's are created dynamically using regex.**
 
 ## Built With
 
@@ -77,10 +75,6 @@ The website is in English only. No localisation is planned.
 * Flask
 * Jinja2
 * SQLite3, SQLAlchemy
-
-## Status
-
-The project is live. Refactoring required.
 
 ## Authors
 
