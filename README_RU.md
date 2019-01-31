@@ -87,4 +87,4 @@ $ flask run
 
 ## Лицензия
 
-MIT License.
+Проект имеет лицензию MIT License – см. файл [LICENSE.md](/LICENSE.md).
