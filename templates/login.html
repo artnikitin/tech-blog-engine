@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Login</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/startbootstrap-clean-blog/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="/static/startbootstrap-clean-blog/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="/static/startbootstrap-clean-blog/css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Prism syntax highlighting CSS -->
+    <link href="/static/addons/prism-syntax.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <br><br><br>
+        <form action="{{ url_for('login') }}" method="post"
+        style="margin: 0 auto; width:250px;">
+            <div class="form-group">
+                <b><label for="username">Username</label></b>
+                <input class="form-control" type="text" id="username" name="username" style="width: 200px;">
+            </div>
+            <div class="form-group">
+                <b><label for="password">Password</label></b>
+                <input class="form-control" type="password" id="password" name="password" style="width: 200px;">
+            </div>
+            <button type="submit" class="btn btn-primary" name="login" value="login">Login</button>
+        </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

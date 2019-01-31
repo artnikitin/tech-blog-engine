@@ -1,0 +1,53 @@
+{% extends "layout_2.html" %}
+{% block category %}
+<!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          {% if not posts %}
+          <div class="post-preview">
+            <h2 class="post-title">Coming soon...</h2>
+              <br>
+          </div>
+          {% else %}
+            {% for post in posts %}
+              {% for key, value in post.items() %}
+                {% if key.published != 0 %}
+                <div class="post-preview">
+                  <a href="{{ url_for('post', url=key.url) }}">
+                    <h2 class="post-title">
+                      {{ key.heading }}
+                    </h2>
+                    <h3 class="post-subtitle">
+                      {{ key.sub_heading }}
+                    </h3>
+                  </a>
+                  <p class="post-meta">Posted
+                    {% if value == "Today" %}
+                    Today
+                    {% endif %}
+                    by
+                    <a href="#">{{ key.author }}</a>
+                    {% if key.category is not none %}
+                    in <a href="#">{{ key.category }}</a>
+                    {% endif %}
+                    {% if value != "Today" %}
+                    on {{ value }}
+                    {% endif %}
+                    </p>
+                </div>
+                <hr>
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+          {% endif %}
+        </div>
+        </div>
+      </div>
+
+    <hr>
+{% endblock %}
+
+{% block category_title %}
+<title>The Big Data Blog</title>
+{% endblock %}

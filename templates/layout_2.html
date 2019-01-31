@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115759282-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-115759282-1');
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ TeX: { extensions: ["cancel.js"] }});
+    </script>
+    <script type="text/javascript" async src="/static/addons/MathJax/unpacked/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    {% block meta_post %}{% endblock %}
+
+      {% block post_title %}{% endblock %}
+      {% block home_title %}{% endblock %}
+      {% block archive_title %}{% endblock %}
+      <!--{% block contact_title %}{% endblock %}-->
+      <!--{% block ebook2_title %}{% endblock %}-->
+      <!--{% block ebook_title %}{% endblock %}-->
+      {% block category_title %}{% endblock %}
+      {% block about_title %}{% endblock %}
+
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/startbootstrap-clean-blog/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="/static/startbootstrap-clean-blog/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/startbootstrap-clean-blog/css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Prism syntax highlighting CSS -->
+    <link href="/static/addons/prism-syntax.css" rel="stylesheet">
+
+  </head>
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="/">[ Home ]</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('algebra') }}">Algebra</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('statistics') }}">Statistics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('calculus') }}">Calculus</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('linear_algebra') }}">Linear Algebra</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('about') }}">Where am I?</a>
+            </li>
+            {% block logout_btn %}{% endblock %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead">
+      <!--<div class="overlay"></div>-->
+      <div class="container" id="{{ box_id }}">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="{{ heading_class }}">
+              <h1>{{ heading }}</h1>
+              <{{ subheading_class }} class="subheading">{{ subheading }}</{{ subheading_class }}>
+              {% block post_heading %}{% endblock %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    {% block index %}{% endblock %}
+    {% block about %}{% endblock %}
+    {% block post %}{% endblock %}
+    <!--{% block contact %}{% endblock %}-->
+    <!--{% block ebook %}{% endblock %}-->
+    {% block admin %}{% endblock %}
+    {% block create %}{% endblock %}
+    {% block edit %}{% endblock %}
+    {% block archive %}{% endblock %}
+    {% block category %}{% endblock %}
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <ul class="list-inline text-center">
+              <!--<li class="list-inline-item">-->
+                <!--<a href="https://linkedin.com/in/timnikitin">-->
+                  <!--<span class="fa-stack fa-lg">-->
+                    <!--<i class="fa fa-circle fa-stack-2x"></i>-->
+                    <!--<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>-->
+                  <!--</span>-->
+                <!--</a>-->
+              <!--</li>-->
+              <li class="list-inline-item">
+                <a href="mailto:artnikitin.c@gmail.com">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <!--<li class="list-inline-item">-->
+                <!--<a href="https://github.com/artnikitin">-->
+                  <!--<span class="fa-stack fa-lg">-->
+                    <!--<i class="fa fa-circle fa-stack-2x"></i>-->
+                    <!--<i class="fa fa-github fa-stack-1x fa-inverse"></i>-->
+                  <!--</span>-->
+                <!--</a>-->
+              <!--</li>-->
+
+            </ul>
+            <p class="copyright text-muted">Copyright &copy; Tim Nikitin 2018</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/startbootstrap-clean-blog/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/startbootstrap-clean-blog/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!--{% block ebook_js %}{% endblock %}-->
+
+    <!-- Custom scripts for this template -->
+    <script src="/static/startbootstrap-clean-blog/js/clean-blog.min.js"></script>
+
+    <!-- Prism syntax highlighing scripts -->
+    <script src="/static/addons/prism-syntax.js"></script>
+
+    <!-- TinyMSE editor -->
+    <script src="/static/addons/tinymce/js/tinymce/tinymce.min.js"></script>
+
+    <script type="text/javascript">
+      tinymce.init({
+        selector: "#myEditor",
+        theme: "modern",
+        plugins: [
+        "advlist autolink lists link image charmap print preview hr anchor pagebreak",
+        "searchreplace wordcount visualblocks visualchars code fullscreen",
+        "insertdatetime media nonbreaking save table contextmenu directionality",
+        "template paste textcolor colorpicker textpattern imagetools"
+        ],
+        toolbar1: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+        toolbar2: "media | forecolor backcolor | code | blockquote | post_image",
+        image_advtab: true,
+        templates: [
+        {title: 'Test template 1', body: 'Test 1'},
+        {title: 'Test template 2', body: 'Test 2'}
+          ],
+
+        setup: function(editor) {
+
+          function imageHtml() {
+            return '<img class=\"img-fluid\" src=\"/static/img/pictures_inside_posts/\" alt=\"\"><span class=\"caption text-muted\">caption</span>';
+          }
+
+          function insertImage() {
+            var html = imageHtml();
+            editor.insertContent(html);
+          }
+
+          editor.addButton('post_image', {
+            image: "/static/img/image_icon.png",
+            onclick: insertImage
+          });
+        }
+      });
+
+    </script>
+    <script type="text/javascript">
+      $(function() {
+        $('#flash').delay(500).fadeIn('normal', function() {
+        $(this).delay(2500).fadeOut();
+        });
+      });
+
+    </script>
+
+  </body>
+
+
+</html>

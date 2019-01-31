@@ -1,0 +1,46 @@
+{% extends "layout_2.html" %}
+
+{% block post_heading %}
+<span class="meta">Posted
+    {% if date_formatted == "Today" %}
+    Today
+    {% endif %}
+    by
+    <a href="{{ url_for('about') }}">{{ post.author }}</a>
+    {% if post.category is not none %}
+    in <a href="{{ url_for(post.category.lower().replace(' ', '')) }}">{{ post.category }}</a>
+    {% endif %}
+    {% if date_formatted != "Today" %}
+    on {{ date_formatted }}
+    {% endif %}</span>
+{% endblock %}
+
+{% block post %}
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+              {{ post.text | safe }}
+            <div id="disqus_thread"></div>
+            <script src="/static/addons/comments.js"></script>
+          </div>
+        </div>
+      </div>
+    </article>
+    <hr>
+{% endblock %}
+
+{% block meta_post %}
+<meta property="og:url" content="https://timnikitin.com/post{{ post.url }}">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Math Tutorials">
+<meta property="og:title" content="{{ post.heading }}">
+<meta property="og:description" content="{{ post.text.replace('<p>', '') }}">
+<meta property="og:image" content="/static/img/site-heading.jpg">
+<meta property="og:locale" content="en_US">
+{% endblock %}
+
+{% block post_title %}
+<title>{{ post.heading }}</title>
+{% endblock %}

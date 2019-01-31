@@ -1,0 +1,30 @@
+{% extends "layout_2.html" %}
+{% block ebook %}
+<!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <!-- <img src="/static/img/IMG_465456-small.jpg" class="img-fluid"> !-->
+            <p>This e-book summarizes all the algebra content on this blog. It covers Algebra I and
+            Algebra II high school classes. So it's basically two books in one. The e-book format is pdf, and
+            it's totally free to download.</p>
+        </div>
+      </div>
+        <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto text-center">
+            <!-- <img src="/static/img/IMG_465456-small.jpg" class="img-fluid"> !-->
+            <img src="/static/img/cover.pdf" style="align:center">
+        </div>
+      </div>
+        <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto text-center">
+            <a class="btn btn-primary" href="{{ url_for('static', filename='img/Algebra_Flight_Manual.pdf') }}">Download &rarr;</a>
+            <!--<a class="btn btn-primary float-right" href="{{ url_for('ebook') }}">Donate &rarr;</a>-->
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+{% block ebook_title %}
+<title>Ebook</title>
+{% endblock %}

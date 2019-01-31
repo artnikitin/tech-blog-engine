@@ -1,0 +1,73 @@
+{% extends "layout_2.html" %}
+{% block ebook %}
+<!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <br>
+          {% if get_flashed_messages() %}
+              <div class="alert alert-info" role="alert" id="flash">
+                  {{ get_flashed_messages() | join(" ") }}
+              </div>
+            {% endif %}
+
+          <p>This e-book summarizes all the algebra content on this blog. It covers Algebra I and
+            Algebra II high school classes. So it's basically two books in one. The e-book format is pdf, and
+            it's absolutely free, just fill in the form below, and I'll send you a copy on your email.</p>
+          <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
+          <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
+          <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
+
+          <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto text-center">
+            <!-- <img src="/static/img/IMG_465456-small.jpg" class="img-fluid"> !-->
+            <img src="/static/img/cover.pdf" style="align:center">
+          </div>
+          </div>
+
+          <form action="{{ url_for('ebook') }}" name="sentMessage" id="contactForm" method="post">
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="Name" id="name" name="name" required data-validation-required-message="Please enter your name.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Email Address</label>
+                <input type="email" class="form-control" placeholder="Email Address" id="email" name="email" required data-validation-required-message="Please enter your email address.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Subject</label>
+                <textarea rows="3" class="form-control" placeholder="Fields of Interest and/or Occupation" id="about" name="about" required data-validation-required-message="If you don't feel comfortable, just write some random text here"></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" id="sendMessageButton" name="send" value="send">Send</button>
+            </div>
+            <br>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+{% endblock %}
+
+{% block ebook_title %}
+<title>Contact Me</title>
+{% endblock %}
+
+{% block ebook_js %}
+<!-- Contact Form JavaScript -->
+    <script src="/static/startbootstrap-clean-blog/js/jqBootstrapValidation.js"></script>
+    <!--<script src="/static/startbootstrap-clean-blog/js/contact_me.js"></script> !-->
+
+{% endblock %}

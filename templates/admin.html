@@ -1,0 +1,60 @@
+{% extends "layout_2.html" %}
+
+{% block admin %}
+<!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <!-- New Post Button -->
+          <div class="clearfix">
+            <a class="btn btn-primary float-right" href="/admin/create" style="margin: 10px !important;">Create New Post</a>
+          </div>
+        <div class="col-lg-8 col-md-10 mx-auto">
+            {% if get_flashed_messages() %}
+            <br>
+              <div class="alert alert-info" role="alert" id="flash">
+                  {{ get_flashed_messages() | join(" ") }}
+              </div>
+            {% endif %}
+          <table id="table">
+                <tbody>
+                {% for post in posts_month %}
+                    {% for key, value in post.items() %}
+                        <tr class="year" style="text-align: center;">
+                            <th>
+                                {% if value[1] != "" %}
+                                {{ value[1] }}
+                                {% endif %}
+                            </th>
+                            <td></td>
+                        </tr>
+                        <tr class="month">
+                            <th>
+                                {% if value[0] != "" %}
+                                {{ value[0] }}
+                                {% endif %}
+                            </th>
+                            <td></td>
+                        </tr>
+                        <tr class="post">
+                            <th style="text-align: center;">
+                                {{ key.date.strftime("%d") }}
+                            </th>
+                            <td>
+                                {% if key.published != 1 %}
+                                <a href="{{ url_for('edit') }}?post_heading={{ key.heading }}" value="{{ key.heading }}" style="color: #808080;">{{ key.heading }}</a>
+                                {% else %}
+                                <a href="{{ url_for('edit') }}?post_heading={{ key.heading }}" value="{{ key.heading }}">{{ key.heading }}</a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+{% block logout_btn %}
+<li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+{% endblock %}

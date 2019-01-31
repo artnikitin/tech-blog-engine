@@ -1,0 +1,41 @@
+{% extends "layout_2.html" %}
+
+{% block create %}
+<div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+           <form action="{{ url_for('create') }}" method="post">
+               <div class="form-group">
+                   <b><label for="heading">Author</label></b>
+                   <textarea class="form-control" id="author" name="author" rows="1"></textarea>
+               </div>
+               <div class="form-group">
+                   <b><label for="heading">Category</label></b>
+                   <textarea class="form-control" id="category" name="category" rows="1"></textarea>
+               </div>
+               <div class="form-group">
+                   <b><label for="heading">Heading</label></b>
+                   <textarea class="form-control" id="heading" name="heading" rows="1"></textarea>
+               </div>
+               <div class="form-group">
+                   <b><label for="subheading">Subheading</label></b>
+                   <textarea class="form-control" id="subheading" name="subheading" rows="2"></textarea>
+               </div>
+               <div class="form-group">
+                   <b><label for="myEditor">Text</label></b>
+                   <textarea class="form-control" id="myEditor" name="text" rows="15" autofocus></textarea>
+               </div>
+
+               <div class="btn-group">
+                   <button type="submit" class="btn btn-primary" name="publish" value="publish">Publish</button>
+                   <button type="submit" class="btn btn-primary" name="save" value="save">Save Changes</button>
+                   <button type="submit" class="btn btn-primary" name="preview" value="preview">Preview</button>
+              </div>
+            </form>
+        </div>
+      </div>
+</div>
+{% endblock %}
+{% block logout_btn %}
+<li class="nav-item"><a class="nav-link" href="{{ url_for('logout') }}">Logout</a></li>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "layout_2.html" %}
+
+{% block archive %}
+<!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            <table id="table">
+                <tbody>
+                {% for post in posts_month %}
+                    {% for key, value in post.items() %}
+                        <tr class="year" style="text-align: center;">
+                            <th>
+                                {% if value[1] != "" and key.published != 0 %}
+                                {{ value[1] }}
+                                {% endif %}
+                            </th>
+                            <td></td>
+                        </tr>
+                        <tr class="month">
+                            <th>
+                                {% if value[0] != "" and key.published != 0 %}
+                                {{ value[0] }}
+                                {% endif %}
+                            </th>
+                            <td></td>
+                        </tr>
+                        {% if key.published == 1 %}
+                        <tr class="post">
+                            <th style="text-align: center;">
+                                {{ key.date.strftime("%d") }}
+                            </th>
+                            <td>
+                                <a href="{{ url_for('post', url=key.url) }}">{{ key.heading }}</a>
+                            </td>
+                        </tr>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+{% block archive_title %}
+<title>Archive</title>
+{% endblock %}
