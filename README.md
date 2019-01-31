@@ -46,7 +46,7 @@ $ flask run
 
 ![Alt text](static/img/blog_comments.png?raw=true)
 
-**and math notation is running on [MathJax](https://www.mathjax.org) – a fancy javascript engine for enterpreting LaTeX in browsers**
+**and math notation is running on [MathJax](https://www.mathjax.org) – a javascript engine for enterpreting LaTeX in browsers**
 
 ![Alt text](static/img/blog_math.png?raw=true)
 
