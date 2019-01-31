@@ -55,6 +55,8 @@ $ flask run
 
 ![Alt text](static/img/blog_archive.png?raw=true)
 
+### Admin post editor
+
 **You can access admin dashboard via /admin url. Login:**
 
 ![Alt text](static/img/blog_login.png?raw=true)
