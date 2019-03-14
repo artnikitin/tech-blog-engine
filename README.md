@@ -2,8 +2,6 @@
 
 A modified minimalistic version of the [clean blog theme](https://github.com/BlackrockDigital/startbootstrap-clean-blog) from BlackRockDigital with customly built Flask engine. 
 
-Hosted on [timnikitin.com](https://timnikitin.com).
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
